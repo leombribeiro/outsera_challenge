@@ -1,0 +1,21 @@
+[project]
+name = "outsera-challenge"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "leombribeiro",email = "leonardombribeiro@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard] (>=0.123.0,<0.124.0)",
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "alembic (>=1.17.2,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "outsera_challenge", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
