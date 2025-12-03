@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from src.outsera_challenge.db.db import Session
 
 
 class BaseRepository:

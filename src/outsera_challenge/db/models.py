@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
+from sqlalchemy import Boolean
 
 
 class Base(DeclarativeBase):
@@ -8,9 +9,9 @@ class Base(DeclarativeBase):
 class Movie(Base):
     __tablename__ = "movies"
 
-    id: Mapped[int] = mapped_column(primary_key=True)
-    year: Mapped[int] = mapped_column(nullable=False)
-    title: Mapped[str] = mapped_column(nullable=False)
-    studios: Mapped[str] = mapped_column(nullable=False)
-    producers: Mapped[str] = mapped_column(nullable=False)
-    winner: Mapped[bool] = mapped_column(nullable=False)
+    id: Mapped[str] = mapped_column(primary_key=True)
+    year: Mapped[int] = mapped_column()
+    title: Mapped[str] = mapped_column()
+    studios: Mapped[str] = mapped_column()
+    producers: Mapped[str] = mapped_column(nullable=True)
+    winner: Mapped[bool] = mapped_column(Boolean, default=False)
