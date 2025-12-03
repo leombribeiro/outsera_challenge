@@ -2,13 +2,13 @@ import csv
 from src.outsera_challenge.models.movie import MovieModel
 from src.outsera_challenge.services.movie_service import MovieService
 from src.outsera_challenge.repositories.movie_repository import MovieRepository
-from src.outsera_challenge.db.db import session
+from src.outsera_challenge.db.db import get_session
 
 
 class CSVReader:
     @staticmethod
     async def import_csv():
-        session_db = session()
+        session_db = get_session()
         db = await session_db.__anext__()
 
         try:

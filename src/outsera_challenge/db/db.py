@@ -18,9 +18,13 @@ def get_engine():
     return engine
 
 
-async def session():
-    session = async_sessionmaker(bind=get_engine())
-    yield session()
+async def get_session():
+    SessionLocal = async_sessionmaker(
+        bind=get_engine(),
+        class_=AsyncSession,
+    )
+    async with SessionLocal() as session:
+        yield session
 
 
-Session = Annotated[AsyncSession, Depends(session)]
+Session = Annotated[AsyncSession, Depends(get_session)]

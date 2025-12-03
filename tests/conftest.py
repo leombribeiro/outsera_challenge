@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, Asyn
 
 from src.outsera_challenge.main import app
 from src.outsera_challenge.db.models import Base, Movie
-from src.outsera_challenge.db.db import session
+from src.outsera_challenge.db.db import get_session
 
 
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
@@ -121,7 +121,7 @@ async def client(test_engine, seed_database):
         async with SessionLocal() as session:
             yield session
 
-    app.dependency_overrides[session] = override_get_session
+    app.dependency_overrides[get_session] = override_get_session
 
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
@@ -140,7 +140,7 @@ async def client_empty(test_engine):
         async with SessionLocal() as session:
             yield session
 
-    app.dependency_overrides[session] = override_get_session
+    app.dependency_overrides[get_session] = override_get_session
 
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
