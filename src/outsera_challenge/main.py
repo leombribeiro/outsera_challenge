@@ -1,12 +1,11 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Depends
 from typing import Annotated
 
-from src.outsera_challenge.services.movie_service import MovieService
+from fastapi import Depends, FastAPI
 
-
-from src.outsera_challenge.models.movie import WinnerResponse
 from src.outsera_challenge.csv import CSVReader
+from src.outsera_challenge.models.movie import WinnerResponse
+from src.outsera_challenge.services.movie_service import MovieService
 
 
 @asynccontextmanager

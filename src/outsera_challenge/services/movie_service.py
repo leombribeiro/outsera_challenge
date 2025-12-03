@@ -1,15 +1,17 @@
-from typing import Annotated
-from itertools import pairwise
-from fastapi import Depends
 from collections import defaultdict
-from src.outsera_challenge.utils import Utils
+from itertools import pairwise
+from typing import Annotated
+
+from fastapi import Depends
+
 from src.outsera_challenge.models.movie import (
-    MovieModel,
     MovieFilter,
-    WinnerResponse,
     MovieInterval,
+    MovieModel,
+    WinnerResponse,
 )
 from src.outsera_challenge.repositories.movie_repository import MovieRepository
+from src.outsera_challenge.utils import Utils
 
 
 class MovieService:

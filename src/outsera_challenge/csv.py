@@ -1,8 +1,9 @@
 import csv
-from src.outsera_challenge.models.movie import MovieModel
-from src.outsera_challenge.services.movie_service import MovieService
-from src.outsera_challenge.repositories.movie_repository import MovieRepository
+
 from src.outsera_challenge.db.db import get_session
+from src.outsera_challenge.models.movie import MovieModel
+from src.outsera_challenge.repositories.movie_repository import MovieRepository
+from src.outsera_challenge.services.movie_service import MovieService
 
 
 class CSVReader:

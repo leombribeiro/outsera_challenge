@@ -1,8 +1,10 @@
 from uuid import uuid4
-from src.outsera_challenge.db.base_repository import BaseRepository
-from src.outsera_challenge.models.movie import MovieModel, MovieFilter
-from src.outsera_challenge.db.models import Movie
+
 from sqlalchemy import select
+
+from src.outsera_challenge.db.base_repository import BaseRepository
+from src.outsera_challenge.db.models import Movie
+from src.outsera_challenge.models.movie import MovieFilter, MovieModel
 
 
 class MovieRepository(BaseRepository):
