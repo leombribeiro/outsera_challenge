@@ -11,7 +11,7 @@ from src.outsera_challenge.csv import CSVReader
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # await CSVReader.import_csv()
+    await CSVReader.import_csv()
     yield
 
 

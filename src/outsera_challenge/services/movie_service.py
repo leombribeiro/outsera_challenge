@@ -30,6 +30,7 @@ class MovieService:
                 winners[producer].append(movie.year)
 
         intervals = self._get_intervals(winners)
+
         if not intervals:
             return WinnerResponse(min=[], max=[])
 

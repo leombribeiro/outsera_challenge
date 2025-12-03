@@ -16,8 +16,8 @@ class MovieFilter(BaseModel):
 class MovieInterval(BaseModel):
     producer: str
     interval: int
-    previous_win: int
-    following_win: int
+    previous_win: int = Field(serialization_alias="previousWin")
+    following_win: int = Field(serialization_alias="followingWin")
 
 
 class WinnerResponse(BaseModel):

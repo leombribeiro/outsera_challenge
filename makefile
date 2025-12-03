@@ -6,3 +6,6 @@ revision:
 
 migrate:
 	alembic upgrade head
+
+test:
+	pytest tests
