@@ -1,3 +1,6 @@
+install:
+	poetry install
+
 run:
 	uvicorn src.outsera_challenge.main:app --reload
 
